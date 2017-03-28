@@ -5,6 +5,36 @@ CREATE TABLE tbl_user (
     email VARCHAR(128) NOT NULL
 );
 
+CREATE TABLE person (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(128) NOT NULL,
+    age INTEGER (128) NOT NULL,
+    interest VARCHAR(128) NOT NULL
+);
+
+CREATE TABLE person1 (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(128) NOT NULL,
+    age VARCHAR(128) NOT NULL
+
+);
+CREATE TABLE interest (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    interest VARCHAR(128) NOT NULL
+
+
+);
+INSERT INTO person1 (name, age) VALUES ('Rhendel', 19);
+
+INSERT INTO tbl_user (name, age, interest) VALUES ('Rhendel', 19, 'Milk tea');
+
+SELECT person1.name,interest.interest
+FROM person1_interest
+INNER JOIN person1 ON person1_interest.person1_id = person1.id
+INNER JOIN interest ON person1_interest.interest_id = interest.id
+;
+
+
 INSERT INTO tbl_user (username, password, email) VALUES ('test1', 'pass1', 'test1@example.com');
 INSERT INTO tbl_user (username, password, email) VALUES ('test2', 'pass2', 'test2@example.com');
 INSERT INTO tbl_user (username, password, email) VALUES ('test3', 'pass3', 'test3@example.com');
